@@ -1,27 +1,3 @@
-Skip to content
- 
-Search…
-All gists
-Back to GitHub
-Sign in
-Sign up
-Instantly share code, notes, and snippets.
-
-@jimmymcp
-jimmymcp/.multi-stage-azure-pipelines.yml
-Created 4 years ago
-You must be signed in to star a gist
-You must be signed in to fork a gist
-Code
-Revisions
-1
-Stars
-11
-Forks
-21
-<script src="https://gist.github.com/jimmymcp/4ca22e61161efe7cdac5d6007c45d8a6.js"></script>
-Example multi-stage YAML pipeline for Azure DevOps
-.multi-stage-azure-pipelines.yml
 trigger:
 - '*'
 
