@@ -107,7 +107,7 @@ stages:
           mavenAuthenticateFeed: false
           effectivePomSkip: false
           sonarQubeRunAnalysis: false
-          
+
 - stage: Release
   displayName: Release
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
@@ -139,3 +139,5 @@ stages:
                 mavenAuthenticateFeed: false
                 effectivePomSkip: false
                 sonarQubeRunAnalysis: false
+
+- task: LambdatestResults@1
