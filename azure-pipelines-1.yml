@@ -96,6 +96,18 @@ stages:
             Import-Module navcontainerhelper;
             Remove-NavContainer $(container_name)
         condition: always()
+
+      - task: Maven@4
+        inputs:
+          mavenPomFile: 'pom.xml'
+          publishJUnitResults: true
+          testResultsFiles: '**/surefire-reports/TEST-*.xml'
+          javaHomeOption: 'JDKVersion'
+          mavenVersionOption: 'Default'
+          mavenAuthenticateFeed: false
+          effectivePomSkip: false
+          sonarQubeRunAnalysis: false
+          
 - stage: Release
   displayName: Release
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
@@ -117,3 +129,13 @@ stages:
                   $Path = Split-Path '$(System.ArtifactsDirectory)' -Parent;
                   $Artifact = "$Path\App Package\*.app";
                   Copy-Item $Artifact 'C:\Release\';
+            - task: Maven@4
+              inputs:
+                mavenPomFile: 'pom.xml'
+                publishJUnitResults: true
+                testResultsFiles: '**/surefire-reports/TEST-*.xml'
+                javaHomeOption: 'JDKVersion'
+                mavenVersionOption: 'Default'
+                mavenAuthenticateFeed: false
+                effectivePomSkip: false
+                sonarQubeRunAnalysis: false
