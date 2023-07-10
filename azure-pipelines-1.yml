@@ -107,6 +107,7 @@ stages:
           mavenAuthenticateFeed: false
           effectivePomSkip: false
           sonarQubeRunAnalysis: false
+      - task: LambdatestResults@1
 
 - stage: Release
   displayName: Release
@@ -139,5 +140,4 @@ stages:
                 mavenAuthenticateFeed: false
                 effectivePomSkip: false
                 sonarQubeRunAnalysis: false
-
-- task: LambdatestResults@1
+            - task: LambdatestResults@1
