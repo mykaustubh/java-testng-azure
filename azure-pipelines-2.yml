@@ -27,13 +27,5 @@ stages:
     # pool:
     #   name: Default
     steps:               
-      - task: Maven@4
-      - task: CmdLine@2
-        inputs:
-          script: |
-            echo Write your commands here
-            
-            echo Hello world
-            
-            npm install
+      - task: Maven@3
       - task: LambdatestResults@1
