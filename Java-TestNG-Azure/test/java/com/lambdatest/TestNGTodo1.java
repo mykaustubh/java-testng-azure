@@ -34,7 +34,7 @@ public class TestNGTodo1 {
         caps.setCapability("browserVersion", "80");
         caps.setCapability("version", "latest");
         caps.setCapability("build", buildname);
-        caps.setCapability("fixedIP", "10.253.33.109");
+        // caps.setCapability("fixedIP", "10.253.33.109");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
 
